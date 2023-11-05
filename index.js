@@ -52,6 +52,9 @@ const dbConnect = require("./config/database");
 dbConnect()
 
 
+const cloudinaryConnect = require("./config/cloudinary");
+cloudinaryConnect()
+
 
 
 
