@@ -23,7 +23,13 @@ const itemSchema = new mongoose.Schema(
         restaurentid: {     // means the person who is logged in 
             type: String,
             required: true
-        }
+        },
+        feedback: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "FEEDBACK"
+            }
+        ]
     }
 )
 module.exports = mongoose.model("ITEM", itemSchema)
