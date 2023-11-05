@@ -31,14 +31,14 @@ const userSchema = new mongoose.Schema(
         },
         restaurentName: {
             type: String,
-            required: true
+
         },
         token: String,
         resetPasswordExpiry: Date,
         accountType: {
             type: String,
             required: true,
-            enum: ["customer", "restaurent", admin]
+            enum: ["customer", "restaurent", "admin"]
         },
         wishlist: [
             {

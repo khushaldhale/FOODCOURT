@@ -42,7 +42,7 @@ app.get("/", (req, res, next) => {
     return res.status(200)
         .json(
             {
-                success: false,
+                success: true,
                 message: 'server is up and running'
             }
         )
@@ -50,6 +50,13 @@ app.get("/", (req, res, next) => {
 
 const dbConnect = require("./config/database");
 dbConnect()
+
+
+
+
+
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/v1/auth", authRoutes)
 
 
 app.use((error, req, res, next) => {
@@ -62,6 +69,9 @@ app.use((error, req, res, next) => {
             }
         )
 })
+
+
+
 
 
 const PORT = process.env.PORT || 4000;
