@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-
+require("dotenv").config()
 
 
 
@@ -24,13 +24,14 @@ const sendMail = async (from, to, subject, body) => {
             }
         )
 
-        console.log("mail info is", mail_info);
+
 
         return true
     }
 
     catch (error) {
         console.log("error occured while sending a mail");
+        console.log(error)
         return false
     }
 }
